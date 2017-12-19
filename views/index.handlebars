@@ -1,15 +1,17 @@
 <h1>Burger Joint</h1>
 
-<h2>Burgers to be eaten</h2>
+{{!--
+<h2>Burgers to be eaten</h2>--}}
 
 <ul>
-    {{#each burgers}} {{#unless sleepy}} {{/unless}} {{/each}}
+    {{#each burgers}} {{#unless burgers}} {{/unless}} {{/each}}
 </ul>
 
-<h2>Devoured Burgers</h2>
+{{!--
+<h2>Devoured Burgers</h2>--}}
 
 <ul>
-    {{#each burgers}} {{#if sleepy}} {{/if}} {{/each}}
+    {{#each burgers}} {{#if burgers}} {{/if}} {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
@@ -18,12 +20,6 @@
     <div class="form-group">
         <label for="newBurger">Burger Name:</label>
         <input type="text" id="newBurger" name="name">
-    </div>
-
-    <div class="form-group">
-        <label for="slee">Devour?</label><br>
-        <input type="radio" name="devour" value="1" checked> Devoured!<br>
-        <input type="radio" name="devour" value="0"> Eat it!
     </div>
 
     <button type="submit">Add Burger</button>
