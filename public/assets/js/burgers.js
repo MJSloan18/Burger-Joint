@@ -21,16 +21,17 @@ $(function() {
         );
     });
 
-    $(".new-burger").on("submit", function(event) {
+    $(".create-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
         var newBurger = {
-            name: $("#newBurger").val().trim(),
+            burgerName: $("#newBurger").val().trim(),
+            devour: false
         };
 
         // Send the POST request.
-        $.ajax("/api/cats", {
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(
